@@ -1,0 +1,11 @@
+# 1차 문제풀이
+a = input()
+b = input()
+c = input()
+dic = {'black' : 0, 'brown' : 1, 'red' : 2 ,'orange' : 3, 'yellow' : 4, 'green' : 5, 'blue' : 6 , 'violet' : 7, 'grey' : 8, 'white' : 9}
+answer = str(dic[a]) + str(dic[b]) + '0' * dic[c]
+print(int(answer))
+
+# 더 짧고 빠르게
+a = ['black', 'brown', 'red', 'orange', 'yellow', 'green', 'blue', 'violet', 'grey', 'white']
+print(int(str(a.index(input())) + str(a.index(input()))) * 10 ** a.index(input()))
