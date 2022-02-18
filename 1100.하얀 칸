@@ -1,0 +1,15 @@
+n = list()
+c = 0
+
+for i in range(8):
+  n.append(list(input()))
+
+for j in range(8):
+  for k in range(8):
+    if j % 2 == 0:
+      if k % 2 == 0 and n[j][k] == 'F':
+        c += 1
+    else:
+      if k % 2 == 1 and n[j][k] == 'F':
+        c += 1
+print(c)
