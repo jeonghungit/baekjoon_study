@@ -1,0 +1,19 @@
+while True:
+  a, b, c = map(int, input().split())
+  
+  if a == 0 and b == 0 and c == 0:
+      break
+
+  tmp = []
+  tmp.append(a)
+  tmp.append(b)
+  tmp.append(c)
+
+  pita = max(tmp)
+
+  del tmp[tmp.index(pita)] 
+
+  if tmp[0]**2 + tmp[1]**2 == pita**2:
+    print('right')
+  else:
+    print('wrong')
