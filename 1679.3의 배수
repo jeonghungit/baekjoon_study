@@ -1,0 +1,20 @@
+def Q(x, cnt):
+  if len(x) > 1:
+    a = 0
+    for i in x:
+      a += int(i)
+    cnt += 1
+    Q(str(a), cnt)
+
+  else:
+    if int(x) % 3 == 0:
+      print(cnt)
+      print("YES")
+    else:
+      print(cnt)
+      print("NO")
+  
+
+x = input()
+cnt = 0
+Q(x, cnt)
