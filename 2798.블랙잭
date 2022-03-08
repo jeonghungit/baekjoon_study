@@ -1,0 +1,29 @@
+n, m = map(int, input().split())
+num_list = input().split()
+
+sum_list = []
+
+
+for i in num_list:
+  picked_num_list = []
+  picked_num_list.append(int(i))
+  
+  for j in num_list[1:]:
+    if j == i:
+      continue
+    else:
+      picked_num_list.append(int(j))
+      
+      for k in num_list[2:]:
+        if k == i or k == j:
+          continue
+        picked_num_list.append(int(k))
+        if sum(picked_num_list) <= m:
+          sum_list.append(sum(picked_num_list))
+        del picked_num_list[-1]
+
+      del picked_num_list[-1]
+    
+  del picked_num_list[0]
+
+print(max(sum_list))
