@@ -1,0 +1,16 @@
+N = int(input())
+dic = {}
+rank = [1] * N
+
+for i in range(N):
+  x, y = input().split()
+  dic[i] = [x, y]
+  
+for i in range(N):
+  for j in range(i, N):
+    if dic[i][0] < dic[j][0] and dic[i][1] < dic[j][1]:
+      rank[i] += 1
+    elif dic[i][0] > dic[j][0] and dic[i][1] > dic[j][1]:
+      rank[j] += 1
+
+print(*rank)
