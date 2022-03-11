@@ -1,0 +1,33 @@
+import sys
+input = sys.stdin.readline
+N = int(input())
+stack = []
+
+
+for _ in range(N):
+  com = input().split()
+  # push
+  if com[0] == 'push':
+    stack.append(int(com[1]))
+  # pop
+  elif com[0] == 'pop':
+    if len(stack) != 0:
+      print(stack[-1])
+      del stack[-1]
+    else:
+      print(-1)
+  # size
+  elif com[0] == 'size':
+    print(len(stack))
+  # empty
+  elif com[0] == 'empty':
+    if len(stack) != 0:
+      print(0)
+    else:  
+      print(1)
+  # top
+  elif com[0] == 'top':
+    if len(stack) != 0:
+      print(stack[-1])
+    else:
+      print(-1)
