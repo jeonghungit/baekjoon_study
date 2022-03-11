@@ -14,3 +14,16 @@ for i in range(N):
       rank[j] += 1
 
 print(*rank)
+
+
+# 더 간단히
+N = int(input())
+arr = [list(map(int,input().split())) for _ in range(N)]
+
+for i in arr:
+  result = 1
+  for j in arr:
+    if i[0] < j[0] and i[1] < j[1]:
+      result += 1
+  
+  print(result, end = " ")
