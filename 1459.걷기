@@ -1,0 +1,17 @@
+x, y, w, s = map(int, input().split())
+res = 0
+same = min(x, y)
+
+if s <= w*2:
+  res += same * s
+  x -= same
+  y -= same
+
+if s < w:
+  res = res + (x * s) + (y * s)
+  if max(x, y) % 2 != 0:
+    res -= s - w
+else:
+  res = res + (x * w) + (y * w)
+
+print(res)
