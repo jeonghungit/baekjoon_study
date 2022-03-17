@@ -1,0 +1,38 @@
+N, K = map(int, input().split())
+A = []
+cnt = 0
+
+for _ in range(N):
+  A.append(int(input()))
+
+A.sort(reverse=True)
+
+for i in A:
+  while K >= i:
+    K = K - i
+    cnt += 1
+
+print(cnt)
+
+
+# 시간초과가 나서 반복문 하나를 없앨 수 있는 방법을 생각하게 됨.
+
+N, K = map(int, input().split())
+A = []
+cnt = 0
+
+for _ in range(N):
+  A.append(int(input()))
+
+
+for i in range(N-1, -1, -1):
+  if K == 0:
+    break
+  
+  if A[i] > K:
+    continue
+  
+  cnt = cnt + K // A[i]
+  K = K % A[i]
+ 
+print(cnt)
