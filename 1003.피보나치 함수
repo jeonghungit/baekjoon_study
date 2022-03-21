@@ -1,0 +1,38 @@
+def fibonacci(x):
+  global zero, one
+
+  if x == 0:
+    zero += 1
+    return zero
+    
+  elif x == 1:
+    one += 1
+    return one
+
+  return fibonacci(x-1) + fibonacci(x-2)
+
+
+T = int(input())
+  
+for i in range(len(T)):
+  zero = 0
+  one = 0
+  n = int(input())
+  fibonacci(n)
+  print(zero, one)
+
+# 시간초과 발생
+# 1, 0의 규칙을 찾아서 다시
+
+T = int(input())
+ 
+for _ in range(T):
+    cnt_0 = [1,0]
+    cnt_1 = [0,1]
+    n = int(input())
+    if n>1:
+        for i in range(n-1):
+            cnt_0.append(cnt_1[-1])
+            cnt_1.append(cnt_0[-2]+cnt_1[-1]) 
+ 
+    print(cnt_0[n], cnt_1[n])
